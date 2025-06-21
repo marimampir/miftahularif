@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Miftahul Arif</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #121212;
+            --darker-bg: #0a0a0a;
+            --primary: #FFD700;
+            --primary-light: #FFEE32;
+            --text: #e0e0e0;
+            --text-light: #ffffff;
+            --text-dark: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--darker-bg);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--text-light);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), 
+                        url('./images 1.jpg') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--text);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--dark-bg);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--dark-bg);
+        }
+
+        /* About Section */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--text-light);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .skills {
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background-color: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 4px;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            background-color: var(--darker-bg);
+        }
+
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            color: var(--text);
+            padding: 8px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            border-radius: 30px;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary);
+            color: var(--dark-bg);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255, 215, 0, 0.8), rgba(18, 18, 18, 0.8));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-overlay p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .portfolio-overlay a {
+            color: var(--dark-bg);
+            background-color: var(--text-light);
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .portfolio-overlay a:hover {
+            background-color: var(--darker-bg);
+            color: var(--primary);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+            color: var(--text);
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background-color: var(--darker-bg);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .contact-item span {
+            color: var(--text);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: var(--darker-bg);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            color: var(--dark-bg);
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: var(--darker-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #333;
+            border: 1px solid #444;
+            border-radius: 5px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background-color: var(--primary);
+            color: var(--dark-bg);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker-bg);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text);
+        }
+
+        footer p span {
+            color: var(--primary);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text, .contact-info, .contact-form {
+                width: 100%;
+            }
+            
+            .about-img {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--darker-bg);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 40px;
+                transition: left 0.3s;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .portfolio-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Porto<span>folio</span></a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#portfolio">Portofolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'am <span>Miftahul Arif</span></h1>
+                <p>Creative Visual Specialist passionate about visual storytelling through graphic design, photography, video editing, and social media management, Turning ideas into impactful visuals.</p>
+                <div class="hero-btns">
+                    <a href="#portfolio" class="btn">My Portofolio</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="./images 2.png" alt="Profil Saya">
+                </div>
+                <div class="about-text">
+                    <h3>Creative Visual Specialist</h3>
+                    <p>Creative Visual Specialist with over 5 years of experience in the design and web development industry. I possess the ability to translate complex concepts into beautiful, intuitive, and functional designs.</p>
+                    <p>My approach to design is user-centered, ensuring that every element I create not only looks visually appealing but also delivers a seamless user experience.</p>
+                    
+                    <div class="skills">
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Graphic Design</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Illustrator</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Adobe Photoshop</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>HTML/CSS</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="section-title">
+            <h2>My Portfolio</h2>
+        </div>
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="photography">Photography</button>
+            <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+        </div>
+        <div class="portfolio-grid">
+            <!-- Item 1 (Visible by default) -->
+            <div class="portfolio-item show" data-category="photography">
+                <div class="portfolio-img">
+                    <img src="abdul.jpeg" alt="Proyek 1">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Abdul</h3>
+                    <p>Perform at Jazz Traffic Festival 2018</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 2 (Visible by default) -->
+            <div class="portfolio-item show" data-category="photography">
+                <div class="portfolio-img">
+                    <img src="isyana.jpeg" alt="Proyek 2">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Isyana Sarasvati</h3>
+                    <p>Perform at Jazz Traffic Festival 2018</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 3 (Visible by default) -->
+            <div class="portfolio-item show" data-category="photography">
+                <div class="portfolio-img">
+                    <img src="jtf 18.jpeg" alt="Proyek 3">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Meta</h3>
+                    <p>Perform at Jazz Traffic Festival 2018</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 4 (Visible by default) -->
+            <div class="portfolio-item show" data-category="photography">
+                <div class="portfolio-img">
+                    <img src="reza artamevia.jpeg" alt="Proyek 4">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Reza Artamevia</h3>
+                    <p>Perform at Jazz Traffic Festival 2018</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            
+            <!-- Hidden Items (will be shown when "Lihat Semua" clicked) -->
+            <div class="portfolio-item" data-category="graphic">
+                <div class="portfolio-img">
+                    <img src="IMG_5578.jpg" alt="Proyek 5">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Al Hamra Restaurant</h3>
+                    <p>Social Media Management Instagram</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 6 -->
+            <div class="portfolio-item" data-category="graphic">
+                <div class="portfolio-img">
+                    <img src="IMG_5579.jpg" alt="Proyek 6">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Larazeta Restaurant</h3>
+                    <p>Social Media Management Instagram</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 7 -->
+            <div class="portfolio-item" data-category="graphic">
+                <div class="portfolio-img">
+                    <img src="IMG_5580.jpg" alt="Proyek 6">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Nice For Kids</h3>
+                    <p>Social Media Management Instagram</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 8 -->
+            <div class="portfolio-item" data-category="graphic">
+                <div class="portfolio-img">
+                    <img src="IMG_5581.jpg" alt="Proyek 6">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Apotek Pahala</h3>
+                    <p>Social Media Management Instagram</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 9 -->
+            <div class="portfolio-item" data-category="branding">
+                <div class="portfolio-img">
+                    <img src="IMG_5582.jpg" alt="Proyek 6">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Dessert Yuk</h3>
+                    <p>Logo Branding UMKM</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 10 -->
+            <div class="portfolio-item" data-category="branding">
+                <div class="portfolio-img">
+                    <img src="IMG_5583.jpg" alt="Proyek 6">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Syabel ID</h3>
+                    <p>Logo Branding UMKM</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 11 -->
+            <div class="portfolio-item" data-category="branding">
+                <div class="portfolio-img">
+                    <img src="IMG_5584.jpg" alt="Proyek 6">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Takul Project</h3>
+                    <p>Logo Branding UMKM</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 12 -->
+            <div class="portfolio-item" data-category="branding">
+                <div class="portfolio-img">
+                    <img src="IMG_5585.jpg" alt="Proyek 6">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Mockup Takul Project</h3>
+                    <p>Logo Branding UMKM</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 13 -->
+            <div class="portfolio-item" data-category="branding">
+                <div class="portfolio-img">
+                    <img src="IMG_5586.jpg" alt="Proyek 6">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Mockup Book Cover Design</h3>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 14 -->
+            <div class="portfolio-item" data-category="branding">
+                <div class="portfolio-img">
+                    <img src="IMG_5587.jpg" alt="Proyek 6">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Mockup Book Cover Design</h3>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 15 -->
+            <div class="portfolio-item" data-category="photography">
+                <div class="portfolio-img">
+                    <img src="IMG_5588.jpg" alt="Proyek 6">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Tri Rismaharini</h3>
+                    <p>Mantan Walikota Surabaya</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+            <!-- Item 16 -->
+            <div class="portfolio-item" data-category="photography">
+                <div class="portfolio-img">
+                    <img src="IMG_5589.jpg" alt="Proyek 6">
+                </div>
+                <div class="portfolio-overlay">
+                    <h3>Tri Rismaharini</h3>
+                    <p>Mantan Walikota Surabaya</p>
+                    <a href="#">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Lihat Semua Button -->
+        <div class="view-all-container">
+            <button id="view-all-btn" class="view-all-btn">Lihat Semua Portofolio</button>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Hide all items except those with .show class */
+    .portfolio-item {
+        display: none;
+    }
+    
+    .portfolio-item.show {
+        display: block;
+    }
+    
+    /* View All Button Style */
+    .view-all-container {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .view-all-btn {
+        padding: 12px 30px;
+        background-color: transparent;
+        color: #333;
+        border: 2px solid #333;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .view-all-btn:hover {
+        background-color: #333;
+        color: white;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const viewAllBtn = document.getElementById('view-all-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        let isShowingAll = false;
+
+        // Fungsi untuk menampilkan item berdasarkan filter
+        function filterItems(category) {
+            portfolioItems.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    if (isShowingAll || item.classList.contains('show')) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Tombol Lihat Semua
+        viewAllBtn.addEventListener('click', function() {
+            isShowingAll = !isShowingAll;
+            
+            if (isShowingAll) {
+                viewAllBtn.textContent = 'Sembunyikan';
+                // Tampilkan semua item sesuai kategori aktif
+                const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+                filterItems(activeFilter);
+            } else {
+                viewAllBtn.textContent = 'Lihat Semua Portofolio';
+                // Kembalikan ke tampilan awal (4 item) sesuai kategori aktif
+                const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+                filterItems(activeFilter);
+            }
+        });
+
+        // Filter kategori
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update tombol aktif
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter item
+                const filterValue = this.getAttribute('data-filter');
+                filterItems(filterValue);
+                
+                // Reset tombol Lihat Semua jika filter diubah
+                if (!isShowingAll) {
+                    viewAllBtn.textContent = 'Lihat Semua Portofolio';
+                }
+            });
+        });
+
+        // Inisialisasi tampilan awal
+        filterItems('all');
+    });
+</script>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let’s Work Together!</h3>
+                    <p>I’m always open to discussing creative projects, collaborations, or just chatting about design and tech. Feel free to reach out via the contact form or details below—I’d love to hear from you!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Surabaya, Indonesia</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+								 <a href="https://wa.me/6289510579739?text=Halo,%20saya%20menginginkan%20informasi%20lebih%20lanjut%20tentang%20produknya."><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.youtube.com/@FaktaDunia-001"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/ignetakul/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@takultukul_/"><i class="fab fa-tiktok"></i></a>
+                    </div>
+<!-- Barcode Section -->
+<div class="square-barcode">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/6289510579739?text=Halo,%20saya%20menginginkan%20informasi%20lebih%20lanjut%20tentang%20produknya." alt="Scan Me">
+</div>
+
+
+<style>
+    .square-barcode {
+        display: inline-block;
+        padding: 15px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .square-barcode:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .square-barcode img {
+        width: 150px;
+        height: 150px;
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+                </div>
+                <div class="contact-form">
+                    <!-- Formspree Integration - Replace YOUR_FORMSPREE_ENDPOINT with your actual ID -->
+                    <form action="https://formspree.io/f/meoklryn" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <!-- Formspree will automatically handle the submission -->
+                        <button type="submit" class="submit-btn">Send Message</button>
+                        
+                        <!-- Optional Formspree feedback elements -->
+                        <div class="formspree-status" style="margin-top: 15px; display: none;">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> <span>Miftahul Arif</span>. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+<!-- Tambahkan sebelum </body> -->
+<div id="portfolio-lightbox" class="lightbox">
+    <span class="close-btn">&times;</span>
+    <div class="lightbox-content">
+        <img id="lightbox-image" src="" alt="">
+        <div class="lightbox-nav">
+            <button class="nav-btn prev-btn">&larr;</button>
+            <button class="nav-btn next-btn">&rarr;</button>
+        </div>
+        <div class="lightbox-caption">
+            <h3 id="lightbox-title"></h3>
+            <p id="lightbox-desc"></p>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Lightbox Styles */
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .lightbox-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90vh;
+        text-align: center;
+    }
+    
+    #lightbox-image {
+        max-width: 100%;
+        max-height: 70vh;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+    }
+    
+    .lightbox-nav {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .nav-btn {
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        font-size: 30px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    .lightbox-caption {
+        color: white;
+        text-align: center;
+        padding: 15px;
+    }
+</style>
+
+<script>
+    // Lightbox functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const lightbox = document.getElementById('portfolio-lightbox');
+        const lightboxImg = document.getElementById('lightbox-image');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxDesc = document.getElementById('lightbox-desc');
+        const closeBtn = document.querySelector('.close-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        // Get all portfolio items and detail buttons
+        const detailButtons = document.querySelectorAll('.portfolio-overlay a');
+        const portfolioItems = Array.from(document.querySelectorAll('.portfolio-item'));
+        let currentIndex = 0;
+        
+        // Open lightbox when "Lihat Detail" is clicked
+        detailButtons.forEach((button, index) => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const item = this.closest('.portfolio-item');
+                currentIndex = portfolioItems.indexOf(item);
+                
+                const imgSrc = item.querySelector('.portfolio-img img').src;
+                const title = item.querySelector('.portfolio-overlay h3').textContent;
+                const desc = item.querySelector('.portfolio-overlay p').textContent;
+                
+                lightboxImg.src = imgSrc;
+                lightboxTitle.textContent = title;
+                lightboxDesc.textContent = desc;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close lightbox
+        closeBtn.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Navigate to previous image
+        prevBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + portfolioItems.length) % portfolioItems.length;
+            updateLightboxContent();
+        });
+        
+        // Navigate to next image
+        nextBtn.addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % portfolioItems.length;
+            updateLightboxContent();
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (lightbox.style.display === 'flex') {
+                if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + portfolioItems.length) % portfolioItems.length;
+                    updateLightboxContent();
+                } else if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % portfolioItems.length;
+                    updateLightboxContent();
+                } else if (e.key === 'Escape') {
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+        
+        function updateLightboxContent() {
+            const item = portfolioItems[currentIndex];
+            const imgSrc = item.querySelector('.portfolio-img img').src;
+            const title = item.querySelector('.portfolio-overlay h3').textContent;
+            const desc = item.querySelector('.portfolio-overlay p').textContent;
+            
+            lightboxImg.src = imgSrc;
+            lightboxTitle.textContent = title;
+            lightboxDesc.textContent = desc;
+        }
+    });
+</script>
+</body>
+</html>
